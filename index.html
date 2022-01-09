@@ -8,36 +8,20 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     const root = document.getElementById("root");
-    // const span = React.createElement(
-    //   "h3",
-    //   {
-    //     id: "sexy-span",
-    //     style: { color: "red" },
-    //     onMouseEnter: () => console.log("mouse enter"),
-    //   },
-    //   "Hello, I'm a span"
-    // );
-    const Title = () => (
-      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
-        Hello, I'm a span
-      </h3>
-    );
-    // const btn = React.createElement(
-    //   "button",
-    //   {
-    //     onClick: () => console.log("I'm clicked"),
-    //   },
-    //   "CLick Me"
-    // );
-    const Button = () => (
-      <button onClick={() => console.log("I'm clicked")}>CLick Me</button>
-    );
-    const Container = () => (
-      <div>
-        <Title />
-        <Button />
-      </div>
-    );
-    ReactDOM.render(<Container/>, root);
+    let count = 0;
+    function countUp() {}
+    function App() {
+      const [counter, modifier] = React.useState(0);
+      const onClick = () => {
+        modifier((cur) => cur + 1);
+      };
+      return (
+        <div>
+          <h3>Total Clicks : {counter}</h3>
+          <button onClick={onClick}>Click Me</button>
+        </div>
+      );
+    }
+    ReactDOM.render(<App />, root);
   </script>
 </html>
