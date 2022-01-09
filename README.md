@@ -18,3 +18,6 @@
         2. 함수를 반환한다.
             modifier((curData) => curData + 1);
         => 가급적 2번 방식을 사용하자!
+
+# React.memo()
+    props가 변경되지 않는 한 컴포넌트를 다시 re-render하지 않아도 되도록 기억해 둔다.(페이지 로드 지연률을 낮춰줌)
